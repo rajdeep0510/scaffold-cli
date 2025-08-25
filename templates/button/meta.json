@@ -1,0 +1,28 @@
+{
+  "name": "Button",
+  "description": "A customizable button component with multiple variants, sizes, and states.",
+  "category": "form",
+  "tags": ["button", "interactive", "form", "cta"],
+  "version": "1.0.0",
+  "dependencies": {
+    "npm": [],
+    "peer": ["react", "prop-types"]
+  },
+  "props": [
+    { "name": "children", "type": "React.ReactNode", "description": "Content inside the button" },
+    { "name": "variant", "type": "string", "default": "primary", "options": ["primary","secondary","destructive","outline","ghost"] },
+    { "name": "size", "type": "string", "default": "md", "options": ["sm","md","lg","xl"] },
+    { "name": "disabled", "type": "boolean", "default": false, "description": "Disable button" },
+    { "name": "loading", "type": "boolean", "default": false, "description": "Loading state" },
+    { "name": "className", "type": "string", "description": "Extra CSS classes" },
+    { "name": "onClick", "type": "function", "description": "Click handler" },
+    { "name": "type", "type": "string", "default": "button", "options": ["button","submit","reset"] }
+  ],
+  "examples": [
+    { "name": "Basic", "code": "<Button>Click Me</Button>" },
+    { "name": "Variants", "code": "<><Button variant='primary'>Primary</Button><Button variant='secondary'>Secondary</Button></>" },
+    { "name": "Sizes", "code": "<><Button size='sm'>Small</Button><Button size='lg'>Large</Button></>" },
+    { "name": "Loading", "code": "<Button loading>Loading...</Button>" }
+  ],
+  "files": ["component.jsx", "index.js"]
+}
