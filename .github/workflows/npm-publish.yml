@@ -3,7 +3,7 @@ name: Publish npm Package
 on:
   push:
     branches:
-      - main   # Trigger when pushing to main branch
+      - main # Trigger when pushing to main branch
 
 jobs:
   publish:
@@ -16,14 +16,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org/'
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org/"
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Build package (optional)
-        run: npm run build
 
       - name: Publish to npm
         run: npm publish
