@@ -1,0 +1,70 @@
+{
+  "name": "Avatar",
+  "description": "An avatar component that displays a profile picture and shows a hover card with name and info.",
+  "category": "display",
+  "tags": ["avatar", "profile", "hover", "info", "card", "ui", "tailwind"],
+  "version": "1.0.0",
+  "author": "{{AUTHOR}}",
+  "created": "{{DATE}}",
+  "dependencies": {
+    "npm": [],
+    "peer": ["react", "prop-types"]
+  },
+  "props": [
+    {
+      "name": "src",
+      "type": "string",
+      "required": true,
+      "default": "undefined",
+      "description": "Image URL or path from public folder for the avatar"
+    },
+    {
+      "name": "alt",
+      "type": "string",
+      "required": false,
+      "default": "Avatar",
+      "description": "Alternative text for accessibility"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": true,
+      "default": "undefined",
+      "description": "Name displayed in hover card"
+    },
+    {
+      "name": "info",
+      "type": "string",
+      "required": false,
+      "default": "undefined",
+      "description": "Additional info displayed in hover card"
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "required": false,
+      "default": "md",
+      "description": "Avatar size",
+      "options": ["sm", "md", "lg"]
+    },
+    {
+      "name": "cardPosition",
+      "type": "string",
+      "required": false,
+      "default": "bottom",
+      "description": "Position of hover card",
+      "options": ["top", "bottom"]
+    }
+  ],
+  "files": ["component.jsx", "index.js", "meta.json"],
+  "customization": {
+    "styling_notes": "Avatar size is controlled via the 'size' prop. Hover card colors, shadow, and border radius can be customized via Tailwind classes in the component."
+  },
+  "accessibility": {
+    "features": [
+      "Hover card provides additional info",
+      "Alt text for image for screen readers",
+      "Keyboard focus not required but can be extended"
+    ]
+  }
+}
