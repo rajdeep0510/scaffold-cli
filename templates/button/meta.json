@@ -2,13 +2,25 @@
   "name": "Button",
   "description": "A customizable button component with size, border, radius, and click animation. Fully compatible with Tailwind CSS for background and text colors.",
   "category": "form",
-  "tags": ["button", "interactive", "form", "cta", "action", "tailwind"],
+  "tags": [
+    "button",
+    "interactive",
+    "form",
+    "cta",
+    "action",
+    "tailwind"
+  ],
   "version": "1.0.0",
-  "author": "{{AUTHOR}}",
-  "created": "{{DATE}}",
+  "author": "@rajdeep",
+  "created": "2025-08-28",
   "dependencies": {
-    "npm": ["clsx"],
-    "peer": ["react", "prop-types"]
+    "npm": [
+      "clsx"
+    ],
+    "peer": [
+      "react",
+      "prop-types"
+    ]
   },
   "props": [
     {
@@ -24,7 +36,12 @@
       "required": false,
       "default": "sm",
       "description": "The size of the button",
-      "options": ["sm", "md", "lg", "xl"]
+      "options": [
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ]
     },
     {
       "name": "disabled",
@@ -60,7 +77,11 @@
       "required": false,
       "default": "button",
       "description": "The HTML button type attribute",
-      "options": ["button", "submit", "reset"]
+      "options": [
+        "button",
+        "submit",
+        "reset"
+      ]
     },
     {
       "name": "borderColor",
@@ -68,7 +89,10 @@
       "required": false,
       "default": "white",
       "description": "Border color of the button",
-      "options": ["black", "white"]
+      "options": [
+        "black",
+        "white"
+      ]
     },
     {
       "name": "borderWidth",
@@ -83,7 +107,12 @@
       "required": false,
       "default": "solid",
       "description": "Border style of the button",
-      "options": ["solid", "dashed", "dotted", "double"]
+      "options": [
+        "solid",
+        "dashed",
+        "dotted",
+        "double"
+      ]
     },
     {
       "name": "borderRadius",
@@ -91,39 +120,25 @@
       "required": false,
       "default": "md",
       "description": "Border radius for rounded corners",
-      "options": ["sm", "md", "lg", "xl", "full"]
+      "options": [
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "full"
+      ]
     }
   ],
-  "examples": [
-    {
-      "name": "Default Button",
-      "description": "Default button with black background and white border",
-      "code": "<Button className=\"bg-black text-white\">Default</Button>"
-    },
-    {
-      "name": "Custom Colors",
-      "description": "Background and text set via Tailwind",
-      "code": "<Button className=\"bg-blue-500 text-white\">Blue Button</Button>"
-    },
-    {
-      "name": "Rounded Variants",
-      "description": "Different radius options",
-      "code": "<>\n  <Button borderRadius=\"sm\">Small Radius</Button>\n  <Button borderRadius=\"lg\">Large Radius</Button>\n  <Button borderRadius=\"full\">Pill Shape</Button>\n</>"
-    },
-    {
-      "name": "Border Variants",
-      "description": "Customizing border style",
-      "code": "<>\n  <Button borderColor=\"black\" borderWidth={2}>Thick Border</Button>\n  <Button borderColor=\"white\" borderStyle=\"dashed\">Dashed Border</Button>\n</>"
-    },
-    {
-      "name": "Loading State",
-      "description": "Button with spinner while loading",
-      "code": "<Button loading>Loading...</Button>"
-    }
+  "files": [
+    "component.jsx",
+    "index.js",
+    "meta.json"
   ],
-  "files": ["component.jsx", "index.js", "meta.json"],
   "customization": {
-    "css_variables": ["--button-border-radius", "--button-transition"],
+    "css_variables": [
+      "--button-border-radius",
+      "--button-transition"
+    ],
     "styling_notes": "Background and text colors are meant to be customized using Tailwind classes via className. Borders and radius are controlled via props."
   },
   "accessibility": {

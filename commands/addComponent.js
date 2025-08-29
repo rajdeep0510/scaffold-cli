@@ -90,6 +90,7 @@ export async function addComponent(name) {
 
     console.log(chalk.yellow(`ℹ️  Description:`), chalk.white(meta.description))
     console.log(chalk.magenta(`📦 Version:`), chalk.white(meta.version))
+    console.log(chalk.magenta(`Author :`), chalk.white(meta.author))
     console.log(chalk.cyan(`\n👉 Import in Next.js:`))
     console.log(chalk.blueBright(`   import { ${meta.name} } from "@/components/ui/${name}"\n`))
   } catch (err) {

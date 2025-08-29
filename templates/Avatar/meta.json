@@ -2,13 +2,24 @@
   "name": "Avatar",
   "description": "An avatar component that displays a profile picture and shows a hover card with name and info.",
   "category": "display",
-  "tags": ["avatar", "profile", "hover", "info", "card", "ui", "tailwind"],
+  "tags": [
+    "avatar",
+    "profile",
+    "hover",
+    "info",
+    "card",
+    "ui",
+    "tailwind"
+  ],
   "version": "1.0.0",
-  "author": "{{AUTHOR}}",
-  "created": "{{DATE}}",
+  "author": "@rajdeep",
+  "created": "2025-08-29",
   "dependencies": {
     "npm": [],
-    "peer": ["react", "prop-types"]
+    "peer": [
+      "react",
+      "prop-types"
+    ]
   },
   "props": [
     {
@@ -45,7 +56,11 @@
       "required": false,
       "default": "md",
       "description": "Avatar size",
-      "options": ["sm", "md", "lg"]
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ]
     },
     {
       "name": "cardPosition",
@@ -53,10 +68,17 @@
       "required": false,
       "default": "bottom",
       "description": "Position of hover card",
-      "options": ["top", "bottom"]
+      "options": [
+        "top",
+        "bottom"
+      ]
     }
   ],
-  "files": ["component.jsx", "index.js", "meta.json"],
+  "files": [
+    "component.jsx",
+    "index.js",
+    "meta.json"
+  ],
   "customization": {
     "styling_notes": "Avatar size is controlled via the 'size' prop. Hover card colors, shadow, and border radius can be customized via Tailwind classes in the component."
   },
