@@ -1,0 +1,82 @@
+{
+  "name": "Input",
+  "description": "A customizable input field component with glow effect on focus.",
+  "category": "form",
+  "tags": [
+    "input",
+    "form",
+    "field",
+    "text",
+    "tailwind",
+    "ui"
+  ],
+  "version": "1.0.0",
+  "author": "@rajdeep",
+  "created": "2025-08-30",
+  "dependencies": {
+    "npm": [],
+    "peer": [
+      "react",
+      "prop-types"
+    ]
+  },
+  "props": [
+    {
+      "name": "type",
+      "type": "string",
+      "required": false,
+      "default": "text",
+      "description": "The type of the input field",
+      "options": [
+        "text",
+        "email",
+        "password",
+        "number",
+        "url"
+      ]
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "description": "Placeholder text shown when input is empty"
+    },
+    {
+      "name": "value",
+      "type": "string | number",
+      "required": false,
+      "default": "undefined",
+      "description": "The value of the input"
+    },
+    {
+      "name": "onChange",
+      "type": "function",
+      "required": false,
+      "default": "undefined",
+      "description": "Callback function triggered when input value changes"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "description": "Custom Tailwind or CSS classes to style the input"
+    }
+  ],
+  "files": [
+    "component.jsx",
+    "index.js",
+    "meta.json"
+  ],
+  "customization": {
+    "styling_notes": "Input uses Tailwind classes for border, padding, and glow effect. Customize glow using focus:ring utilities."
+  },
+  "accessibility": {
+    "features": [
+      "Semantic <input> element",
+      "Supports keyboard navigation",
+      "Screen reader friendly with placeholder"
+    ]
+  }
+}

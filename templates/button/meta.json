@@ -1,28 +1,152 @@
 {
   "name": "Button",
-  "description": "A customizable button component with multiple variants, sizes, and states.",
+  "description": "A customizable button component with size, border, radius, and click animation. Fully compatible with Tailwind CSS for background and text colors.",
   "category": "form",
-  "tags": ["button", "interactive", "form", "cta"],
+  "tags": [
+    "button",
+    "interactive",
+    "form",
+    "cta",
+    "action",
+    "tailwind"
+  ],
   "version": "1.0.0",
+  "author": "@rajdeep",
+  "created": "2025-08-28",
   "dependencies": {
-    "npm": [],
-    "peer": ["react", "prop-types"]
+    "npm": [
+      "clsx"
+    ],
+    "peer": [
+      "react",
+      "prop-types"
+    ]
   },
   "props": [
-    { "name": "children", "type": "React.ReactNode", "description": "Content inside the button" },
-    { "name": "variant", "type": "string", "default": "primary", "options": ["primary","secondary","destructive","outline","ghost"] },
-    { "name": "size", "type": "string", "default": "md", "options": ["sm","md","lg","xl"] },
-    { "name": "disabled", "type": "boolean", "default": false, "description": "Disable button" },
-    { "name": "loading", "type": "boolean", "default": false, "description": "Loading state" },
-    { "name": "className", "type": "string", "description": "Extra CSS classes" },
-    { "name": "onClick", "type": "function", "description": "Click handler" },
-    { "name": "type", "type": "string", "default": "button", "options": ["button","submit","reset"] }
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "required": false,
+      "default": "undefined",
+      "description": "The content to display inside the button"
+    },
+    {
+      "name": "size",
+      "type": "string",
+      "required": false,
+      "default": "sm",
+      "description": "The size of the button",
+      "options": [
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ]
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Whether the button is disabled and non-interactive"
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "description": "Whether the button is in a loading state with spinner"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "required": false,
+      "default": "''",
+      "description": "Tailwind or custom classes to style background, text, hover, etc."
+    },
+    {
+      "name": "onClick",
+      "type": "function",
+      "required": false,
+      "default": "undefined",
+      "description": "Function to call when the button is clicked"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "required": false,
+      "default": "button",
+      "description": "The HTML button type attribute",
+      "options": [
+        "button",
+        "submit",
+        "reset"
+      ]
+    },
+    {
+      "name": "borderColor",
+      "type": "string",
+      "required": false,
+      "default": "white",
+      "description": "Border color of the button",
+      "options": [
+        "black",
+        "white"
+      ]
+    },
+    {
+      "name": "borderWidth",
+      "type": "number",
+      "required": false,
+      "default": "1",
+      "description": "Border thickness of the button"
+    },
+    {
+      "name": "borderStyle",
+      "type": "string",
+      "required": false,
+      "default": "solid",
+      "description": "Border style of the button",
+      "options": [
+        "solid",
+        "dashed",
+        "dotted",
+        "double"
+      ]
+    },
+    {
+      "name": "borderRadius",
+      "type": "string",
+      "required": false,
+      "default": "md",
+      "description": "Border radius for rounded corners",
+      "options": [
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "full"
+      ]
+    }
   ],
-  "examples": [
-    { "name": "Basic", "code": "<Button>Click Me</Button>" },
-    { "name": "Variants", "code": "<><Button variant='primary'>Primary</Button><Button variant='secondary'>Secondary</Button></>" },
-    { "name": "Sizes", "code": "<><Button size='sm'>Small</Button><Button size='lg'>Large</Button></>" },
-    { "name": "Loading", "code": "<Button loading>Loading...</Button>" }
+  "files": [
+    "component.jsx",
+    "index.js",
+    "meta.json"
   ],
-  "files": ["component.jsx", "index.js"]
+  "customization": {
+    "css_variables": [
+      "--button-border-radius",
+      "--button-transition"
+    ],
+    "styling_notes": "Background and text colors are meant to be customized using Tailwind classes via className. Borders and radius are controlled via props."
+  },
+  "accessibility": {
+    "features": [
+      "Keyboard navigation support",
+      "Screen reader friendly with aria-disabled and aria-busy",
+      "Focus visible outline",
+      "Semantic <button> element"
+    ]
+  }
 }

@@ -1,92 +1,85 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
 
-/**
- * A customizable button component with multiple variants and sizes + click animation
- */
 const Button = ({
-                    children,
-                    variant = 'primary',
-                    size = 'md',
-                    disabled = false,
-                    loading = false,
-                    className = '',
-                    onClick,
-                    type = 'button',
-                    ...rest
-                }) => {
-    const [isActive, setIsActive] = useState(false);
+  children,
+  size = "sm",
+  disabled = false,
+  loading = false,
+  className = "",
+  onClick,
+  type = "button",
+  borderColor = "white", // "white" or "black"
+  borderWidth = 1,
+  borderStyle = "solid",
+  borderRadius = "md", // sm, md, lg, xl, full
+  ...rest
+}) => {
+  const sizeClasses = {
+    sm: "h-8 px-3 text-sm",
+    md: "h-10 px-4 text-sm",
+    lg: "h-12 px-5 text-base",
+    xl: "h-14 px-6 text-lg",
+  };
 
-    const baseStyles = {
-        display: 'inline-flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: 'none',
-        borderRadius: '6px',
-        fontFamily: 'inherit',
-        fontWeight: '500',
-        cursor: disabled || loading ? 'not-allowed' : 'pointer',
-        transition: 'all 0.15s ease-in-out',
-        opacity: disabled || loading ? 0.6 : 1,
-        transform: isActive ? 'scale(0.95)' : 'scale(1)', // 👈 shrink effect
-    };
+  const radiusClasses = {
+    sm: "rounded-sm",
+    md: "rounded-md",
+    lg: "rounded-lg",
+    xl: "rounded-xl",
+    full: "rounded-full",
+  };
 
-    const variantStyles = {
-        primary: { backgroundColor: '#3b82f6', color: 'white' },
-        secondary: { backgroundColor: '#f8fafc', color: '#374151', border: '1px solid #d1d5db' },
-        destructive: { backgroundColor: '#dc2626', color: 'white' },
-        outline: { backgroundColor: 'transparent', border: '1px solid #d1d5db', color: '#374151' },
-        ghost: { backgroundColor: 'transparent', color: '#374151' },
-    };
+  const borderClasses = clsx(
+    `border-${borderWidth}`,
+    borderStyle !== "solid" && `border-${borderStyle}`,
+    borderColor === "white" ? "border-white" : "border-black"
+  );
 
-    const sizeStyles = {
-        sm: { height: '32px', padding: '0 12px', fontSize: '14px' },
-        md: { height: '40px', padding: '0 16px', fontSize: '14px' },
-        lg: { height: '44px', padding: '0 24px', fontSize: '16px' },
-        xl: { height: '52px', padding: '0 32px', fontSize: '16px' },
-    };
+  const buttonClasses = clsx(
+    "inline-flex items-center justify-center font-medium",
+    "transition-transform duration-150 ease-in-out", // smooth animation
+    "active:scale-95", // 👈 shrink when clicked
+    borderClasses,
+    radiusClasses[borderRadius],
+    sizeClasses[size],
+    disabled || loading ? "opacity-60 cursor-not-allowed" : "cursor-pointer",
+    className
+  );
 
-    const buttonStyles = {
-        ...baseStyles,
-        ...variantStyles[variant],
-        ...sizeStyles[size],
-    };
-
-    const handleClick = (e) => {
-        if (disabled || loading) {
-            e.preventDefault();
-            return;
-        }
-        setIsActive(true);
-        setTimeout(() => setIsActive(false), 150); // reset after animation
-        if (onClick) onClick(e);
-    };
-
-    return (
-        <button
-            type={type}
-            disabled={disabled || loading}
-            onClick={handleClick}
-            className={className}
-            style={buttonStyles}
-            aria-disabled={disabled || loading}
-            aria-busy={loading}
-            {...rest}
-        >
-            {loading ? 'Loading...' : children}
-        </button>
-    );
+  return (
+    <button
+      type={type}
+      disabled={disabled || loading}
+      onClick={onClick}
+      className={buttonClasses}
+      {...rest}
+    >
+      {loading ? (
+        <span className="flex items-center gap-2">
+          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          Loading...
+        </span>
+      ) : (
+        children
+      )}
+    </button>
+  );
 };
 
 Button.propTypes = {
-    children: PropTypes.node,
-    variant: PropTypes.oneOf(['primary', 'secondary', 'destructive', 'outline', 'ghost']),
-    size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-    disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  children: PropTypes.node,
+  size: PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+  disabled: PropTypes.bool,
+  loading: PropTypes.bool,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  borderColor: PropTypes.oneOf(["black", "white"]),
+  borderWidth: PropTypes.number,
+  borderStyle: PropTypes.oneOf(["solid", "dashed", "dotted", "double"]),
+  borderRadius: PropTypes.oneOf(["sm", "md", "lg", "xl", "full"]),
 };
 
 export default Button;
