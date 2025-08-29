@@ -1,5 +1,7 @@
 # scaffold
 
+![NPM Version](https://img.shields.io/npm/v/%40rajdeep0510%2Fscaffold-cli)
+
 A CLI tool for creating versatile and modern UI components.
 
 ## Import components
