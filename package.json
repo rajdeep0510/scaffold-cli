@@ -1,6 +1,6 @@
 {
   "name": "@rajdeep0510/scaffold-cli",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "This is a CLI app for a UI library which is used for creating versatile and modern UI components.",
   "main": "bin/index.js",
   "type": "module",
