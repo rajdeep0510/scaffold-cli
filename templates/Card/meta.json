@@ -1,0 +1,100 @@
+{
+    "name": "Card",
+    "description": "A versatile card component with support for multiple themes, variants, and interactive states.",
+    "props": {
+        "title": {
+            "type": "string",
+            "description": "The main heading of the card."
+        },
+        "subtitle": {
+            "type": "string",
+            "description": "Secondary text usually placed below the title."
+        },
+        "image": {
+            "type": "string",
+            "description": "URL of the image to display."
+        },
+        "imageFull": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, the image is used as a background with an overlay."
+        },
+        "badge": {
+            "type": "string",
+            "description": "Top-left badge text overlaying the image."
+        },
+        "action": {
+            "type": "node",
+            "description": "Element to display in the top-right corner (e.g., button, icon)."
+        },
+        "footer": {
+            "type": "node",
+            "description": "Content to display at the bottom of the card with a divider."
+        },
+        "theme": {
+            "type": "enum",
+            "options": [
+                "light",
+                "dark"
+            ],
+            "default": "dark",
+            "description": "Color scheme of the card."
+        },
+        "variant": {
+            "type": "enum",
+            "options": [
+                "elevated",
+                "outlined",
+                "flat",
+                "glass",
+                "gradient"
+            ],
+            "default": "elevated",
+            "description": "Visual style of the card container."
+        },
+        "padding": {
+            "type": "enum",
+            "options": [
+                "none",
+                "sm",
+                "md",
+                "lg",
+                "xl"
+            ],
+            "default": "md",
+            "description": "Internal padding of the content area."
+        },
+        "rounded": {
+            "type": "enum",
+            "options": [
+                "none",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+                "2xl",
+                "3xl",
+                "full"
+            ],
+            "default": "2xl",
+            "description": "Border radius of the card."
+        },
+        "hoverEffect": {
+            "type": "enum",
+            "options": [
+                "none",
+                "lift",
+                "scale",
+                "glow",
+                "shimmer"
+            ],
+            "default": "lift",
+            "description": "Animation effect on hover."
+        },
+        "width": {
+            "type": "string",
+            "default": "w-full max-w-sm",
+            "description": "Width classes to control the card's dimensions."
+        }
+    }
+}
