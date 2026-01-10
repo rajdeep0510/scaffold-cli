@@ -27,15 +27,15 @@ program.addHelpText('before', () => {
     );
     
     const importInfo = chalk.blue("How to import components:") + "\n" + 
-                      chalk.green("   import { Button } from '@/components/ui/button'");
+                    chalk.green("   import { Button } from '@/components/ui/button'");
     
     return banner + "\n\n" + description + "\n\n" + importInfo + "\n\n";
 });
 
 program
-  .command('add <component-name>')
-  .description('Add a new component')
-  .action(addComponent)
+    .command('add <component-name>')
+    .description('Add a new component')
+    .action(addComponent)
 
 program
     .command('list')

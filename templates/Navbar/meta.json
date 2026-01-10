@@ -1,0 +1,43 @@
+{
+    "name": "Navbar",
+    "description": "A responsive navigation bar with logo, links, and action buttons. Supports desktop and mobile layouts with a hamburger menu.",
+    "props": {
+        "logo": {
+            "type": "node",
+            "default": "Brand",
+            "description": "The logo or brand name displayed on the left."
+        },
+        "links": {
+            "type": "array",
+            "default": "Home, Features, Pricing, About",
+            "description": "List of navigation items: { label, href }."
+        },
+        "actions": {
+            "type": "node",
+            "description": "Custom action buttons (e.g., Login/Signup) for the right side."
+        },
+        "theme": {
+            "type": "enum",
+            "options": [
+                "light",
+                "dark"
+            ],
+            "default": "light",
+            "description": "Visual theme of the navbar."
+        },
+        "sticky": {
+            "type": "boolean",
+            "default": true,
+            "description": "If true, the navbar remains fixed at the top of the viewport."
+        },
+        "className": {
+            "type": "string",
+            "default": "",
+            "description": "Additional custom classes."
+        },
+        "onLinkClick": {
+            "type": "function",
+            "description": "Callback function triggered when a navigation link is clicked."
+        }
+    }
+}
