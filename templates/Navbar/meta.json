@@ -1,6 +1,14 @@
 {
     "name": "Navbar",
     "description": "A responsive navigation bar with logo, links, and action buttons. Supports desktop and mobile layouts with a hamburger menu.",
+    "version": "1.0.0",
+    "author": "@rajdeep",
+    "category": "layout",
+    "tags": [
+        "navbar",
+        "layout",
+        "component"
+    ],
     "props": {
         "logo": {
             "type": "node",

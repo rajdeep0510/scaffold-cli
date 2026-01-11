@@ -1,6 +1,14 @@
 {
     "name": "Card",
     "description": "A versatile card component with support for multiple themes, variants, and interactive states.",
+    "version": "1.0.0",
+    "author": "@rajdeep",
+    "category": "layout",
+    "tags": [
+        "card",
+        "layout",
+        "component"
+    ],
     "props": {
         "title": {
             "type": "string",

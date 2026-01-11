@@ -1,10 +1,37 @@
 {
   "name": "RadioGroup",
   "description": "Minimalist dark-mode radio group with full prop-based customizability.",
-  "props": {
-    "activeColor": "Tailwind text color class (default: text-blue-500)",
-    "size": ["sm", "md", "lg"],
-    "orientation": ["vertical", "horizontal"],
-    "options": "Array<{label, value, disabled}>"
+  "version": "1.0.0",
+  "author": "@rajdeep",
+  "created": "2025-08-28",
+  "dependencies": {
+    "npm": [
+      "clsx"
+    ],
+    "peer": [
+      "react",
+      "prop-types"
+    ],
+    "category": "form",
+    "tags": [
+      "radio",
+      "group",
+      "form",
+      "interactive",
+      "tailwind"
+    ],
+    "props": {
+      "activeColor": "Tailwind text color class (default: text-blue-500)",
+      "size": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "orientation": [
+        "vertical",
+        "horizontal"
+      ],
+      "options": "Array<{label, value, disabled}>"
+    }
   }
 }
