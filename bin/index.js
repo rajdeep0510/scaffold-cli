@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
 import { addComponent } from '../commands/addComponent.js'
+import { useComponent } from '../commands/use.js'
 import chalk from "chalk";
 import figlet from "figlet";
 import list from "../commands/list.js";
@@ -21,14 +22,14 @@ program.addHelpText('before', () => {
             verticalLayout: "default"
         })
     );
-    
+
     const description = chalk.bold(
         "This is a UI library of components which are very easy to import and use"
     );
-    
-    const importInfo = chalk.blue("How to import components:") + "\n" + 
-                    chalk.green("   import { Button } from '@/components/ui/button'");
-    
+
+    const importInfo = chalk.blue("How to import components:") + "\n" +
+        chalk.green("   import { Button } from '@/components/ui/button'");
+
     return banner + "\n\n" + description + "\n\n" + importInfo + "\n\n";
 });
 
@@ -41,6 +42,11 @@ program
     .command('list')
     .description('List all the components')
     .action(list)
+
+program
+    .command('use <component-name>')
+    .description('Download and install a component from Supabase Storage')
+    .action(useComponent)
 
 program.parse()
 

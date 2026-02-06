@@ -67,14 +67,14 @@ export async function addComponent(name) {
     // Install dependencies if specified in meta.json
     if (meta.dependencies && (meta.dependencies.npm?.length > 0 || meta.dependencies.peer?.length > 0)) {
       spinner.text = `Installing dependencies for '${name}'...`
-      
+
       try {
         if (meta.dependencies.npm?.length > 0) {
           const npmDeps = meta.dependencies.npm.join(' ')
           execSync(`npm install ${npmDeps}`, { stdio: 'inherit' })
           console.log(chalk.green(`✅ Installed npm dependencies: ${npmDeps}`))
         }
-        
+
         if (meta.dependencies.peer?.length > 0) {
           const peerDeps = meta.dependencies.peer.join(' ')
           execSync(`npm install --save-peer ${peerDeps}`, { stdio: 'inherit' })

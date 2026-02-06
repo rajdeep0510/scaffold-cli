@@ -2,7 +2,7 @@
   "name": "Button",
   "description": "A customizable button component with size, border, radius, and click animation. Fully compatible with Tailwind CSS for background and text colors.",
   "version": "1.0.0",
-  "author": "@rajdeep",
+  "author": "@rajdeep0510",
   "category": "form",
   "tags": [
     "button",

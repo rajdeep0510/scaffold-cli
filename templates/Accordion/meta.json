@@ -1,0 +1,158 @@
+{
+    "name": "Accordion",
+    "description": "A minimal, customizable accordion component for displaying collapsible content sections.",
+    "version": "1.0.0",
+    "author": "@rajdeep0510",
+    "created": "2025-08-28",
+    "dependencies": {
+        "npm": [
+            "clsx"
+        ],
+        "peer": [
+            "react",
+            "prop-types"
+        ],
+        "category": "layout",
+        "tags": [
+            "accordion",
+            "collapsible",
+            "interactive",
+            "tailwind"
+        ],
+        "props": {
+            "theme": [
+                "light",
+                "dark"
+            ],
+            "variant": [
+                "default",
+                "bordered",
+                "separated",
+                "minimal"
+            ],
+            "size": [
+                "sm",
+                "md",
+                "lg"
+            ],
+            "iconPosition": [
+                "left",
+                "right"
+            ],
+            "allowMultiple": "boolean",
+            "defaultExpanded": "string | string[]",
+            "collapsible": "boolean",
+            "className": "string"
+        }
+    },
+    "components": {
+        "Accordion": {
+            "description": "The root container for accordion items. Manages state and provides context.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "AccordionItem components to render."
+                },
+                "theme": {
+                    "type": "string",
+                    "default": "dark",
+                    "options": [
+                        "light",
+                        "dark"
+                    ],
+                    "description": "Color theme for the accordion."
+                },
+                "variant": {
+                    "type": "string",
+                    "default": "minimal",
+                    "options": [
+                        "default",
+                        "bordered",
+                        "separated",
+                        "minimal"
+                    ],
+                    "description": "Visual style variant."
+                },
+                "size": {
+                    "type": "string",
+                    "default": "md",
+                    "options": [
+                        "sm",
+                        "md",
+                        "lg"
+                    ],
+                    "description": "Size of the accordion items."
+                },
+                "iconPosition": {
+                    "type": "string",
+                    "default": "right",
+                    "options": [
+                        "left",
+                        "right"
+                    ],
+                    "description": "Position of the expand/collapse icon."
+                },
+                "denyMultiple": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Deny multiple items to be expanded simultaneously."
+                },
+                "defaultExpanded": {
+                    "type": "string | string[]",
+                    "default": "[]",
+                    "description": "ID(s) of items that should be expanded by default."
+                },
+                "collapsible": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Allow all items to be collapsed. If false, at least one item must remain open."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes for the root element."
+                }
+            }
+        },
+        "AccordionItem": {
+            "description": "Individual collapsible item within an Accordion.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "Content to display when the item is expanded."
+                },
+                "id": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Unique identifier for the accordion item."
+                },
+                "title": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Title text displayed in the header."
+                },
+                "icon": {
+                    "type": "ReactNode",
+                    "default": null,
+                    "description": "Optional icon to display before the title."
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Disable the accordion item interaction."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes for the item container."
+                }
+            }
+        }
+    },
+    "usage": {
+        "basic": "<Accordion>\n  <Accordion.Item id=\"1\" title=\"Section 1\">Content 1</Accordion.Item>\n  <Accordion.Item id=\"2\" title=\"Section 2\">Content 2</Accordion.Item>\n</Accordion>",
+        "withImport": "import { Accordion, AccordionItem } from './components/Accordion';\n\n// Using compound component pattern\n<Accordion theme=\"dark\" variant=\"bordered\">\n  <Accordion.Item id=\"item1\" title=\"First Section\">First content</Accordion.Item>\n  <Accordion.Item id=\"item2\" title=\"Second Section\">Second content</Accordion.Item>\n</Accordion>\n\n// Using separate components\n<Accordion>\n  <AccordionItem id=\"item1\" title=\"First\">Content</AccordionItem>\n</Accordion>"
+    }
+}

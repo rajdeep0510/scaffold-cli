@@ -1,0 +1,217 @@
+{
+    "name": "Tabs",
+    "description": "A set of layered sections of content (tab panels) displayed one at a time. Users can switch between panels by clicking tab triggers.",
+    "version": "1.0.0",
+    "author": "@rajdeep0510",
+    "created": "2025-01-12",
+    "dependencies": {
+        "npm": [],
+        "peer": [
+            "react",
+            "react-dom"
+        ]
+    },
+    "category": "navigation",
+    "tags": [
+        "tabs",
+        "navigation",
+        "panels",
+        "interactive",
+        "tailwind"
+    ],
+    "props": {
+        "theme": [
+            "light",
+            "dark"
+        ],
+        "variant": [
+            "underline",
+            "pills",
+            "boxed",
+            "minimal",
+            "lifted"
+        ],
+        "size": [
+            "sm",
+            "md",
+            "lg"
+        ],
+        "orientation": [
+            "horizontal",
+            "vertical"
+        ],
+        "align": [
+            "start",
+            "center",
+            "end",
+            "stretch"
+        ],
+        "defaultValue": "string",
+        "value": "string",
+        "onValueChange": "function",
+        "fullWidth": "boolean"
+    },
+    "components": {
+        "Tabs": {
+            "description": "The root container for tabs. Manages active state and provides context to all child components.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "Tabs sub-components (List, Trigger, Content)."
+                },
+                "theme": {
+                    "type": "string",
+                    "default": "dark",
+                    "options": [
+                        "light",
+                        "dark"
+                    ],
+                    "description": "Color theme for the tabs."
+                },
+                "variant": {
+                    "type": "string",
+                    "default": "underline",
+                    "options": [
+                        "underline",
+                        "pills",
+                        "boxed",
+                        "minimal",
+                        "lifted"
+                    ],
+                    "description": "Visual style variant for the tabs."
+                },
+                "size": {
+                    "type": "string",
+                    "default": "md",
+                    "options": [
+                        "sm",
+                        "md",
+                        "lg"
+                    ],
+                    "description": "Size of the tabs and content."
+                },
+                "orientation": {
+                    "type": "string",
+                    "default": "horizontal",
+                    "options": [
+                        "horizontal",
+                        "vertical"
+                    ],
+                    "description": "Layout orientation of tabs and content."
+                },
+                "align": {
+                    "type": "string",
+                    "default": "start",
+                    "options": [
+                        "start",
+                        "center",
+                        "end",
+                        "stretch"
+                    ],
+                    "description": "Alignment of tab triggers within the list."
+                },
+                "defaultValue": {
+                    "type": "string",
+                    "default": "",
+                    "description": "The value of the tab to be active by default (uncontrolled mode)."
+                },
+                "value": {
+                    "type": "string",
+                    "default": "undefined",
+                    "description": "Controlled active tab value. If provided, component becomes controlled."
+                },
+                "onValueChange": {
+                    "type": "function",
+                    "default": "undefined",
+                    "description": "Callback fired when the active tab changes. Receives the new value."
+                },
+                "fullWidth": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Whether tabs should stretch to fill the full width."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes for the root element."
+                }
+            }
+        },
+        "TabsList": {
+            "description": "Container for tab triggers. Provides proper ARIA role and styling.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "TabsTrigger components."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes."
+                }
+            }
+        },
+        "TabsTrigger": {
+            "description": "The button that activates a tab panel when clicked.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "Label text or content for the tab."
+                },
+                "value": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Unique value identifying this tab. Must match a TabsContent value."
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Disable the tab trigger."
+                },
+                "icon": {
+                    "type": "ReactNode",
+                    "default": null,
+                    "description": "Optional icon to display before the label."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes."
+                }
+            }
+        },
+        "TabsContent": {
+            "description": "The content panel that is shown when its corresponding tab is active.",
+            "props": {
+                "children": {
+                    "type": "ReactNode",
+                    "required": true,
+                    "description": "Content to display when this tab is active."
+                },
+                "value": {
+                    "type": "string",
+                    "required": true,
+                    "description": "Unique value identifying this panel. Must match a TabsTrigger value."
+                },
+                "forceMount": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Force the content to render even when not active (useful for animations)."
+                },
+                "className": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Additional CSS classes."
+                }
+            }
+        }
+    },
+    "usage": {
+        "basic": "<Tabs defaultValue=\"tab1\">\n  <Tabs.List>\n    <Tabs.Trigger value=\"tab1\">Tab 1</Tabs.Trigger>\n    <Tabs.Trigger value=\"tab2\">Tab 2</Tabs.Trigger>\n  </Tabs.List>\n  <Tabs.Content value=\"tab1\">Content 1</Tabs.Content>\n  <Tabs.Content value=\"tab2\">Content 2</Tabs.Content>\n</Tabs>",
+        "withVariants": "<Tabs defaultValue=\"tab1\" variant=\"pills\" theme=\"dark\" size=\"lg\">\n  <Tabs.List>\n    <Tabs.Trigger value=\"tab1\" icon={<Icon />}>Tab 1</Tabs.Trigger>\n    <Tabs.Trigger value=\"tab2\">Tab 2</Tabs.Trigger>\n    <Tabs.Trigger value=\"tab3\" disabled>Disabled</Tabs.Trigger>\n  </Tabs.List>\n  <Tabs.Content value=\"tab1\">Panel 1</Tabs.Content>\n  <Tabs.Content value=\"tab2\">Panel 2</Tabs.Content>\n  <Tabs.Content value=\"tab3\">Panel 3</Tabs.Content>\n</Tabs>",
+        "controlled": "const [activeTab, setActiveTab] = useState('tab1');\n\n<Tabs value={activeTab} onValueChange={setActiveTab}>\n  <Tabs.List>\n    <Tabs.Trigger value=\"tab1\">Tab 1</Tabs.Trigger>\n    <Tabs.Trigger value=\"tab2\">Tab 2</Tabs.Trigger>\n  </Tabs.List>\n  <Tabs.Content value=\"tab1\">Content 1</Tabs.Content>\n  <Tabs.Content value=\"tab2\">Content 2</Tabs.Content>\n</Tabs>"
+    }
+}
