@@ -1,0 +1,29 @@
+# Debug/Test files
+test-supabase.js
+list-buckets.js
+debug-bucket.js
+test-download.js
+inspect-files.js
+list-folder.js
+inspect-zip.js
+inspect-files.js
+list-folder.js
+inspect-zip.js
+test-download.js
+test-supabase.js
+list-buckets.js
+SUPABASE_SETUP.md
+
+# IDE files
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Misc
+*.tgz
+node_modules/
+package-lock.json

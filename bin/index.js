@@ -10,7 +10,7 @@ const program = new Command()
 
 program
     .name('scaffold')
-    .version('1.0.0', '-v, --version', 'output the current version')
+    .version('2.0.0', '-v, --version', 'output the current version')
     .description('Custom UI component generator')
 
 // Add custom help text before the built-in help
